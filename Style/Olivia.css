@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(127deg,rgba(0, 0, 0, 1) 0%, rgba(38, 38, 38, 1) 91%, rgba(77, 77, 77, 1) 100%);
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.banner {
+    width: 100%;
+    height: 98.3vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    perspective: 1000px;
+}
+
+.banner .slider {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 35%;
+    transform: translateY(-11%);
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+
+    animation: autoRotate 20s linear infinite;
+}
+
+.banner .slider .item {
+    position: absolute;
+    inset: 0;
+
+    transform:
+        rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+}
+
+.banner .slider .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.banner .slider .item img:hover {
+    width: 115%;
+    height: 120%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.back a{
+    text-align: center;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: larger;
+}
+
+.back a:visited{
+    text-align: center;
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: larger;
+}
+
+/* just a test code */
+/* @keyframes autoRotate {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(180deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+} */
